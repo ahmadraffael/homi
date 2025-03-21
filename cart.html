@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homi - Home furniture</title>
+    <link href="/src/output.css" rel="stylesheet">
+    <link rel="icon" href="/assets/icon/homi_icon1.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="px-3 sm:px-6 py-2 w-full h-auto bg-white sticky top-0 z-40">
+        <div class="flex justify-between flex-cols-3">
+            <!-- Logo -->
+            <div class="flex items-center justify-left">
+                <div>
+                    <a href="index.html">
+                        <img src="/assets/icon/homi_logo.png" class="h-7 sm:h-9">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Searchbar -->
+            <div class="flex items-center justify-center">
+                <div
+                    class="w-[39vw] sm:w-[31vw] h-8 sm:h-10 bg-white border-solid border-[#8D96AA] border-[1px] px-2 sm:px-3 rounded-full flex items-center overflow-hidden gap-1 sm:gap-2">
+                    <i class='bx bx-search text-base sm:text-lg text-[#8D96AA]'></i>
+                    <input type="text"
+                        class="flex-grow text-sm sm:text-base font-poppins border-none text-[#151515] focus:outline-none"
+                        placeholder="Search in HOMI" spellcheck="false">
+                </div>
+            </div>
+
+            <!-- Profile, Etc -->
+            <div class="flex items-center justify-end relative">
+                <div class="flex items-center gap-1 sm:gap-3">
+                    <!-- Icon -->
+                    <div class="text-xl sm:text-2xl font-bold flex gap-1 sm:gap-2 relative">
+                        <a href="cart.html" class="relative">
+                            <i class='bx bx-cart'></i>
+                            <!-- Badge -->
+                            <span
+                                class="absolute -top-1 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">2</span>
+                        </a>
+                        <a href=""><i class='bx bx-bell'></i></a>
+                    </div>
+
+                    <div class="h-6 sm:h-8 border-l border-[#8D96AA]"></div>
+
+                    <!-- Profile -->
+                    <div>
+                        <a href="profile.html">
+                            <img src="/assets/img/profile.png" class="h-7 sm:h-9 w-auto">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart content -->
+    <section class="mb-20 mt-0 sm:mt-4 container mx-auto p-4 max-w-4xl rounded-xl bg-white">
+        <p class="font-semibold text-2xl mb-4">Your cart</p>
+        <!-- List -->
+        <div>
+            <!-- Item 1 -->
+            <div class=" gap-4 flex">
+                <!-- FLex 1 -->
+                <div class="flex-1 bg-gray-100 rounded-xl flex justify-center items-center">
+                    <img src="/assets/img/furniture_4.png" alt="Pillo Canvas" class="w-[90%]">
+                </div>
+                <!-- flex 2 -->
+                <div class="flex-[1.2]">
+                    <p class="leading-tight font-medium text-lg sm:text-xl "><a href="product_detail.html">Pillo Canvas</a></p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Sofa, 3 seat, Green</p>
+                    <p class="mt-2 truncate text-basae sm:text-lg font-semibold">Rp999.000</p>
+                    <div class="w-full bg-[#8D96AA] h-[1px] my-4"></div>
+                    <p class="text-base font-medium">Weight:</p>
+                    <p class="text-base text-[#424753] font-light">16 kg</p>
+                    <p class="text-base font-medium">DImension:</p>
+                    <p class="text-base text-[#424753] font-light">80 cm (H) × 210 cm (W) × 85 cm (D)</p>
+                </div>
+                <!-- flex 3 -->
+                <div class="flex-[0.9] space-y-4">
+                    <div>
+                        <div class="flex flex-row items-end gap-1">
+                            <p class="font-semibold text-lg">Colour</p>
+                            <p class="text-[#8D96AA]">(1)</p>
+                        </div>
+                        <div class="w-6 h-6 rounded-full bg-[#4c5137] cursor-pointer"></div>
+                    </div>
+                    <div >
+                            <div class="flex flex-row items-end ">
+                                <p class="text-[#8D96AA] font-medium">Total:&nbsp;</p>
+                                <p class="text-lg sm:text-xl font-semibold">Rp</p>
+                                <p id="totalNominal" class="text-lg sm:text-xl font-semibold">999.000</p>
+                            </div>
+                            <div class="flex flex-row gap-2 mt-2 ">
+                                <!-- Count -->
+                                <div
+                                    class="flex flex-row w-[100px] h-[40px] justify-center items-center border border-[#8D96AA] rounded-full">
+                                    <button id="minBtn"><i class='bx bx-minus'></i></button>
+                                    <div class="w-[40px] flex justify-center">
+                                        <p class="font-semibold" id="nominal">1</p>
+                                    </div>
+                                    <button id="plusBtn"><i class='bx bx-plus'></i></button>
+                                </div>
+                                <!--  Trash/ Wishlist -->
+                                <button
+                                    class="group flex justify-center items-center w-[40px] h-[40px] border border-[#8D96AA] hover:border-[#FF3880] rounded-full">
+                                    <i class='group-hover:text-[#FF3880] font-medium bx bx-trash text-[#8D96AA]'></i>
+                                </button>
+                                <button
+                                    class="group flex justify-center items-center w-[40px] h-[40px] border border-[#8D96AA] hover:border-[#FF3880] rounded-full">
+                                    <i class='group-hover:text-[#FF3880] font-medium bx bx-heart'></i>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full bg-[#8D96AA] h-[1px] my-10"></div>
+            <!-- Item 2 -->
+            <div class=" gap-4 flex">
+                <!-- FLex 1 -->
+                <div class="flex-1 bg-gray-100 rounded-xl flex justify-center items-center">
+                    <img src="/assets/img/furniture_3.png" alt="Bean Bag (L)" class="w-[90%]">
+                </div>
+                <!-- flex 2 -->
+                <div class="flex-[1.2]">
+                    <p class="leading-tight font-medium text-lg sm:text-xl ">Bean Bag (L)</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Sitable, Kids</p>
+                    <p class="mt-2 truncate text-basae sm:text-lg font-semibold">Rp380.000</p>
+                    <div class="w-full bg-[#8D96AA] h-[1px] my-4"></div>
+                    <p class="text-base font-medium">Weight:</p>
+                    <p class="text-base text-[#424753] font-light">2,5 kg</p>
+                    <p class="text-base font-medium">DImension:</p>
+                    <p class="text-base text-[#424753] font-light">70 cm (H) × 80 cm (W) × 80 cm (D)</p>
+                </div>
+                <!-- flex 3 -->
+                <div class="flex-[0.9] space-y-4">
+                    <div>
+                        <div class="flex flex-row items-end gap-1">
+                            <p class="font-semibold text-lg">Colour</p>
+                            <p class="text-[#8D96AA]">(1)</p>
+                        </div>
+                        <div class="flex gap-1">
+                            <div class="bg-slate-800 w-6 h-6 rounded-full cursor-pointer"></div>
+                            <div class="bg-teal-700 w-6 h-6 rounded-full cursor-pointer"></div>
+                            <div class="bg-blue-200 w-6 h-6 rounded-full cursor-pointer"></div>    
+                        </div>
+                    </div>
+                    <div >
+                            <div class="flex flex-row items-end ">
+                                <p class="text-[#8D96AA] font-medium">Total:&nbsp;</p>
+                                <p class="text-lg sm:text-xl font-semibold">Rp</p>
+                                <p id="totalNominal" class="text-lg sm:text-xl font-semibold">380.000</p>
+                            </div>
+                            <div class="flex flex-row gap-2 mt-2 ">
+                                <!-- Count -->
+                                <div
+                                    class="flex flex-row w-[100px] h-[40px] justify-center items-center border border-[#8D96AA] rounded-full">
+                                    <button id="minBtn"><i class='bx bx-minus'></i></button>
+                                    <div class="w-[40px] flex justify-center">
+                                        <p class="font-semibold" id="nominal">1</p>
+                                    </div>
+                                    <button id="plusBtn"><i class='bx bx-plus'></i></button>
+                                </div>
+                                <!--  Trash/ Wishlist -->
+                                <button
+                                    class="group flex justify-center items-center w-[40px] h-[40px] border border-[#8D96AA] hover:border-[#FF3880] rounded-full">
+                                    <i class='group-hover:text-[#FF3880] font-medium bx bx-trash text-[#8D96AA]'></i>
+                                </button>
+                                <button
+                                    class="group flex justify-center items-center w-[40px] h-[40px] border border-[#8D96AA] hover:border-[#FF3880] rounded-full">
+                                    <i class='group-hover:text-[#FF3880] font-medium bx bx-heart'></i>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full bg-[#8D96AA] h-[1px] my-10"></div>
+        </div>
+        <div class="space-y-2">
+                <div class="flex flex-row items-end ">
+                    <p class="text-[#8D96AA] font-medium">Total:&nbsp;</p>
+                    <p class="text-lg sm:text-xl font-semibold">Rp1.379.000</p>
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" placeholder="Adress" class="w-full h-11 p-2 border border-[#8D96AA] outline-none focus:ring-0 rounded-full mb-3">   
+                    <input type="number" placeholder="Post code" class="w-[40%] h-11 p-2 border border-[#8D96AA] outline-none focus:ring-0 rounded-full mb-3 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none">       
+                    <button class="bg-[#00C63F] h-11 w-[20%] rounded-full text-white">Pay</button>
+                </div>
+                <img src="/assets/img/payment.png" alt="payment">
+        </div>
+    </section>
+
+    <footer class="py-6 border border-t border-[#8D96AA] mt-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left p-4 sm:p-0">
+            <div>
+                <h2 class="font-semibold text-lg">Contact Us</h2>
+                <p class="mt-2 flex items-start"><i class='bx bx-map mr-2'></i>Showroom Location<br>Jl Raya Dayeuh
+                    , Jonggol, No 33 A, Bogor</p>
+                <p class="mt-2 flex items-center"><i class='bx bx-time mr-2'></i>Operating Hours<br>Monday-Sunday (09:00
+                    - 21:00)</p>
+                <p class="mt-2 flex items-center "><i class='bx bxl-whatsapp mr-2'></i><a href="#">WhatsApp:
+                        +62812-3024-2365</a></p>
+                <p class="mt-2 flex items-center"><i class='bx bx-envelope mr-2'></i><a
+                        href="mailto:hello@homifurniture.id">Email: hello@homifurniture.id</a></p>
+            </div>
+
+            <div>
+                <h2 class="font-semibold text-lg">HOMI Furniture</h2>
+                <ul class="mt-1 sm:mt-2 space-y-1 sm:space-y-2">
+                    <li><a href="#" class="hover:text-[#FF6D00]">About Us</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">HOMI Affiliate Program</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Interior Design Services</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Articles</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Careers</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="font-semibold text-lg">Customer Support</h2>
+                <ul class="mt-1 sm:mt-2 space-y-1 sm:space-y-2">
+                    <li><a href="#" class="hover:text-[#FF6D00]">How to Shop</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Payment & Installments</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Assembly Service</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Become a HOMI Partner</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-300 mt-6 pt-4 text-center text-gray-600">
+            <p>&copy; 2025 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const totalNominal = document.getElementById("totalNominal");
+            const nominal = document.getElementById("nominal");
+            const minBtn = document.getElementById("minBtn");
+            const plusBtn = document.getElementById("plusBtn");
+
+            const price = 999000;
+            const maxItems = 10;
+
+            plusBtn.addEventListener("click", function () {
+                let count = parseInt(nominal.textContent);
+                if (count < maxItems) {
+                    count++;
+                    nominal.textContent = count;
+                    totalNominal.textContent = (count * price).toLocaleString("id-ID");
+                }
+            });
+
+            minBtn.addEventListener("click", function () {
+                let count = parseInt(nominal.textContent);
+                if (count > 1) {
+                    count--;
+                    nominal.textContent = count;
+                    totalNominal.textContent = (count * price).toLocaleString("id-ID");
+                }
+            });
+        });
+    </script>
+</body>
