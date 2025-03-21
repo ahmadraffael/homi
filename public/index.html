@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homi - Home furniture</title>
+    <link href="/src/output.css" rel="stylesheet">
+    <link rel="icon" href="/assets/icon/homi_icon1.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#FBFFFE]">
+
+    <!-- Navbar -->
+    <nav class="px-3 sm:px-6 py-2 w-full h-auto bg-white sticky top-0 z-40">
+        <div class="flex justify-between flex-cols-3">
+            <!-- Logo -->
+            <div class="flex items-center justify-left">
+                <div>
+                    <a href="#">
+                        <img src="/assets/icon/homi_logo.png" class="h-7 sm:h-9">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Searchbar -->
+            <div class="flex items-center justify-center">
+                <div
+                    class="w-[39vw] sm:w-[31vw] h-8 sm:h-10 bg-white border-solid border-[#8D96AA] border-[1px] px-2 sm:px-3 rounded-full flex items-center overflow-hidden gap-1 sm:gap-2">
+                    <i class='bx bx-search text-base sm:text-lg text-[#8D96AA]'></i>
+                    <input type="text"
+                        class="flex-grow text-sm sm:text-base font-poppins border-none text-[#151515] focus:outline-none"
+                        placeholder="Search in HOMI" spellcheck="false">
+                </div>
+            </div>
+
+            <!-- Sign in, Etc -->
+            <div class="flex items-center justify-end">
+                <div class="flex items-center gap-1 sm:gap-3">
+                    <!-- Icon -->
+                    <div class="text-lg sm:text-2xl font-bold flex gap-1 sm:gap-2">
+                        <a href=""><i class='bx bx-cart'></i></a>
+                        <a href=""><i class='bx bx-bell'></i></a>
+                    </div>
+
+                    <div class="h-6 sm:h-8 border-l border-[#8D96AA]"></div>
+
+                    <!-- Button -->
+                    <button id="openLogin"
+                        class="h-7 sm:h-10 px-2 sm:px-3 rounded-full text-white text-sm sm:text-base font-medium bg-[#00C63F]">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="loginPopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 sm:w-96 relative">
+            <button id="closeLogin"
+                class="absolute top-3 right-3 text-[#8D96AA] hover:text-gray-800 text-lg font-medium">&times;</button>
+            <h2 class="text-xl font-semibold text-center mb-4">Login to HOMI</h2>
+            <input type="text" placeholder="Email or Username"
+                class="w-full p-2 border border-[#8D96AA] outline-none focus:ring-0 rounded-full mb-3">
+            <input type="password" placeholder="Password"
+                class="w-full p-2 border border-[#8D96AA] outline-none focus:ring-0 rounded-full mb-3">
+            <button id="loginButton" class="w-full bg-[#00C63F] text-white p-2 rounded-full">Log in</button>
+            <div class="flex justify-center mt-2 gap-1">
+                <p>Don't have an account?</p>
+                <a href="#" id="openRegister" class="text-[#00C63F] underline">register here</a>
+            </div>
+        </div>
+    </div>
+    <div id="registerPopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-xl shadow-lg w-80 sm:w-96 relative">
+            <button id="closeRegister"
+                class="absolute top-3 right-3 text-[#8D96AA] hover:text-gray-800 text-lg font-medium">&times;</button>
+            <h2 class="text-xl font-semibold text-center mb-4">Create an Account</h2>
+            <input type="text" placeholder="Full Name"
+                class="w-full p-2 border border-[#8D96AA] outline-none focus:ring-0 rounded-full mb-3">
+            <input type="email" placeholder="Email Address"
+                class="w-full p-2 border border-[#8D96AA] outline-none focus:ring-0 rounded-full mb-3">
+            <input type="password" placeholder="Create Password"
+                class="w-full p-2 border border-[#8D96AA] outline-none focus:ring-0 rounded-full mb-3">
+            <button id="registerButton" class="w-full bg-[#00C63F] text-white p-2 rounded-full">Register</button>
+            <div class="flex justify-center mt-2 gap-1">
+                <p>Already have an account?</p>
+                <a href="#" id="backToLogin" class="text-[#00C63F] underline">Login here</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="px-4 sm:px-0 grid place-items-center container mx-auto w-full h-[94vh] bg-[#FBFFFE] pt-2 pb-6 mb-5">
+        <!-- Wrapper Grid -->
+        <div class="flex lg:flex-row md:flex-col sm:flex-col flex-col gap-4 w-full h-full items-center overflow-hidden">
+            <!-- Div pertama -->
+            <div
+                class="group relative rounded-2xl bg-white flex items-center justify-center h-full w-full  overflow-hidden">
+                <img src="/assets/img/furni_1.png"
+                    class="group-hover:scale-105 transform transition-transform duration-300 w-full h-full object-cover">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span
+                        class="text-white font-semibold text-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                        <a href="">See more →</a>
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- Div kedua -->
+            <div class="relative rounded-2xl bg-[#00524C] flex h-full w-full  overflow-hidden">
+                <h1 class="font-semibold text-5xl sm:text-6xl text-[#DBFFFC] text-left ml-5 mt-5 z-20">
+                    Create a<br>better<br>living<br>life.
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Others -->
+    <section class="px-4 sm:px-0 w-full container h-auto bg-white mx-auto pt-10 border-t border-[#8D96AA]">
+        <!-- Discount -->
+        <div class="mb-20">
+            <p class="font-semibold text-xl sm:text-2xl">Get the DIscount!!</p>
+            <p class="leading-tight text-base sm:text-lg text-[#5f6573]">Don't miss the chance to get special offers!
+                Enjoy exclusive discounts to beautify your dream home with our best furniture collection.</p>
+            <section class="mt-2 sm:mt-4 relative w-full overflow-hidden bg-gray-200 p-2 sm:p-3 rounded-xl">
+                <!-- Slider -->
+                <div class="relative w-full overflow-hidden">
+                    <div id="discount-slider"
+                        class="flex transition-transform duration-300 ease-in-out gap-4 whitespace-nowrap">
+                        <div class="flex-none w-full sm:w-full md:w-1/2">
+                            <img src="/assets/img/coupon_1.png" alt="Coupon voucher">
+                        </div>
+                        <div class="flex-none w-full sm:w-full md:w-1/2">
+                            <img src="/assets/img/coupon_2.png" alt="Coupon voucher">
+                        </div>
+                        <div class="flex-none w-full sm:w-full md:w-1/2">
+                            <img src="/assets/img/coupon_3.png" alt="Coupon voucher">
+                        </div>
+                        <div class="flex-none w-full sm:w-full md:w-1/2">
+                            <img src="/assets/img/coupon_4.png" alt="Coupon voucher">
+                        </div>
+                        <div class="flex-none w-full sm:w-full md:w-1/2">
+                            <img src="/assets/img/coupon_5.png" alt="Coupon voucher">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tombol Navigasi -->
+                <button id="prev-btn"
+                    class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black opacity-50 text-white w-7 h-7 sm:w-10 sm:h-10 flex items-center justify-center rounded-full shadow-lg hidden">
+                    <p class="font-bold">←</p>
+                </button>
+                <button id="next-btn"
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black opacity-50 text-white w-7 h-7 sm:w-10 sm:h-10 flex items-center justify-center rounded-full shadow-lg">
+                    <p class="font-bold">→</p>
+                </button>
+            </section>
+        </div>
+
+        <!-- Pruduct Category -->
+        <div class="mb-20 ">
+            <p class="font-semibold text-xl sm:text-2xl mb-2 sm:mb-4 ">Product Categories</p>
+            <div class="w-full grid sm:grid-cols-3 grid-cols-2 gap-2 sm:gap-4">
+                <!-- Item 1 -->
+                <a class="block" href="">
+                    <div
+                        class="group relative w-full h-auto max-h-[185px] rounded-xl overflow-hidden flex justify-center items-center">
+                        <img src="/assets/img/category_1.png"
+                            class="group-hover:scale-105 transform transition-transform duration-300 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <p class="absolute inset-0 flex items-center justify-center text-white font-semibold">Springbed
+                        </p>
+                    </div>
+                </a>
+                <!-- Item 2 -->
+                <a class="block" href="">
+                    <div
+                        class="group relative w-full h-auto max-h-[185px] rounded-xl overflow-hidden flex justify-center items-center">
+                        <img src="/assets/img/category_2.png"
+                            class="group-hover:scale-105 transform transition-transform duration-300 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <p class="absolute inset-0 flex items-center justify-center text-white font-semibold">Table</p>
+                    </div>
+                </a>
+                <!-- Item 3 -->
+                <a class="block" href="">
+                    <div
+                        class="group relative w-full h-auto max-h-[185px] rounded-xl overflow-hidden flex justify-center items-center">
+                        <img src="/assets/img/category_3.png"
+                            class="group-hover:scale-105 transform transition-transform duration-300 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <p class="absolute inset-0 flex items-center justify-center text-white font-semibold">Sitable
+                        </p>
+                    </div>
+                </a>
+                <!-- Item 4 -->
+                <a class="block" href="">
+                    <div
+                        class="group relative w-full h-auto max-h-[185px] rounded-xl overflow-hidden flex justify-center items-center">
+                        <img src="/assets/img/category_4.png"
+                            class="group-hover:scale-105 transform transition-transform duration-300 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <p class="absolute inset-0 flex items-center justify-center text-white font-semibold">Kitchen
+                        </p>
+                    </div>
+                </a>
+                <!-- Item 5 -->
+                <a class="block" href="">
+                    <div
+                        class="group relative w-full h-auto max-h-[185px] rounded-xl overflow-hidden flex justify-center items-center">
+                        <img src="/assets/img/category_5.png"
+                            class="group-hover:scale-105 transform transition-transform duration-300 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <p class="absolute inset-0 flex items-center justify-center text-white font-semibold">Cupboard
+                        </p>
+                    </div>
+                </a>
+                <!-- Item 6 -->
+                <a class="block" href="">
+                    <div
+                        class="group relative w-full h-auto max-h-[185px] rounded-xl overflow-hidden flex justify-center items-center">
+                        <img src="/assets/img/category_6.png"
+                            class="group-hover:scale-105 transform transition-transform duration-300 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <p class="absolute inset-0 flex items-center justify-center text-white font-semibold">Kids</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Featured Product -->
+        <div class="mb-20">
+            <p class="font-semibold text-xl sm:text-2xl mb-2 sm:mb-4">Featured Products</p>
+            <div class="grid grid-cols-5 gap-4">
+                <a href="#" class="bg-gray-100 rounded-xl p-2">
+                    <div class="relative">
+                        <img src="/assets/img/furniture_1.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Japanese Knife set</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Knife, Stainless, Set of 12</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp450.000</p>
+                </a>
+                <a href="#" class="bg-gray-100 rounded-xl p-2">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex flex-col justify-between pb-1">
+                            <div>
+                            </div>
+                            <div class="flex gap-2">
+                            </div>
+                        </div>
+                        <img src="/assets/img/furniture_2.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Stainless kettle</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Kettle, Stainless, Orange</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp125.000</p>
+                </a>
+                <a href="#" class="bg-gray-100 rounded-xl p-2">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex flex-col justify-between pb-1">
+                            <div>
+                                <div class="bg-[#eb2a2a] w-fit px-1.5 rounded-full text-white text-sm font-semibold">
+                                    Flash
+                                    Discount</div>
+                            </div>
+                            <div class="flex gap-2">
+                                <div class="bg-slate-800 w-[25px] h-[25px] rounded-full"></div>
+                                <div class="bg-teal-700 w-[25px] h-[25px] rounded-full"></div>
+                                <div class="bg-blue-200 w-[25px] h-[25px] rounded-full"></div>
+                            </div>
+                        </div>
+                        <img src="/assets/img/furniture_3.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Bean Bag (L)</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Sitable, Kids</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp380.000</p>
+                </a>
+                <a href="#" class="bg-gray-100 rounded-xl p-2">
+                    <div class="relative">
+                        <img src="/assets/img/furniture_7.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Vas & Pot set</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Vas, Pot, Garden, Set of 3</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp275.000</p>
+                </a>
+                <a href="#" class="bg-gray-100 rounded-xl p-2">
+                    <div class="relative">
+                        <img src="/assets/img/furniture_10.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Teak Wood Desk</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Desk, Minimalist, Brown</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp450.000</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Last Viewed -->
+        <div class="mb-20">
+            <p class="font-semibold text-xl sm:text-2xl mb-2 sm:mb-4">Last Viewed</p>
+            <div class="grid grid-cols-5 gap-4 mb-2 sm:mb-4">
+                <a href="#" class="bg-gray-100 rounded-xl p-2 break-inside-avoid">
+                    <div class="relative">
+                        <img src="/assets/img/furniture_5.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Memory Foam</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Pillow, 40x70cm</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp85.000</p>
+                </a>
+                <a href="#" class="bg-gray-100 rounded-xl p-2 break-inside-avoid">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex flex-col justify-between pb-1">
+                            <div>
+                            </div>
+                            <div class="flex gap-2">
+                            </div>
+                        </div>
+                        <img src="/assets/img/furniture_6.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Autumn Breeze</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Springbed, 180x200cm</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp1.250.000</p>
+                </a>
+                <a href="product_detail.html" class="bg-gray-100 rounded-xl p-2 break-inside-avoid">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex flex-col justify-between pb-1">
+                            <div>
+                            </div>
+                            <div class="flex gap-2">
+                            </div>
+                        </div>
+                        <img src="/assets/img/furniture_4.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Pillo Canvas</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Sofa, 3 seat, Green</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp999.000</p>
+                </a>
+                <a href="#" class="bg-gray-100 rounded-xl p-2 break-inside-avoid">
+                    <div class="relative">
+                        <img src="/assets/img/furniture_11.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Squared Teak Desk</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Desk, Minimalist, Brown</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp475.000</p>
+                </a>
+                <a href="#" class="bg-gray-100 rounded-xl p-2 break-inside-avoid">
+                    <div class="relative">
+                        <img src="/assets/img/furniture_12.png" alt="furniture">
+                    </div>
+                    <p class="leading-tight font-medium text-lg sm:text-xl mb-0 sm:mb-1">Chill Morning</p>
+                    <p class="truncate text-base sm:text-lg font-light text-[#424753]">Arm chair, Blue</p>
+                    <p class="mt-3 truncate text-basae sm:text-lg font-semibold">Rp450.000</p>
+                </a>
+            </div>
+            <a href="shop.html">
+                <button class="bg-zinc-950 py-1 sm:py-2 w-[100px] sm:w-[120px] text-sm sm:text-base rounded-full font-medium ease-in duration-100 text-white">
+                See more
+            </button>
+            </a>
+        </div>
+
+        <!-- Info penting -->
+        <div class="mb-20">
+            <div class="bg-[#FF6D00] p-5 sm:p-8 rounded-xl">
+                <p class="font-semibold text-xl sm:text-2xl text-white mb-2 sm:mb-4">⚠︎ Important Information</p>
+                <p class="text-base sm:text-lg mb-3 sm:mb-4 leading-tight text-white">Find information on HOMI product
+                    recalls to ensure a safer and more comfortable home life.</p>
+                <a href="">
+                    <button
+                        class="relative bg-white py-2 flex justify-center items-center w-[120px] hover:w-[180px] rounded-full font-medium ease-in duration-300 group overflow-hidden">
+                        <span class="transition-all duration-300">Read more</span>
+                        <p
+                            class="absolute right-8 opacity-0 translate-x-[-10px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                            →</p>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 border border-t border-[#8D96AA]">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left p-4 sm:p-0">
+            <div>
+                <h2 class="font-semibold text-lg">Contact Us</h2>
+                <p class="mt-2 flex items-start"><i class='bx bx-map mr-2'></i>Showroom Location<br>Jl Raya Dayeuh
+                    , Jonggol, No 33 A, Bogor</p>
+                <p class="mt-2 flex items-center"><i class='bx bx-time mr-2'></i>Operating Hours<br>Monday-Sunday (09:00
+                    - 21:00)</p>
+                <p class="mt-2 flex items-center "><i class='bx bxl-whatsapp mr-2'></i><a href="#">WhatsApp:
+                        +62812-3024-2365</a></p>
+                <p class="mt-2 flex items-center"><i class='bx bx-envelope mr-2'></i><a
+                        href="mailto:hello@homifurniture.id">Email: hello@homifurniture.id</a></p>
+            </div>
+
+            <div>
+                <h2 class="font-semibold text-lg">HOMI Furniture</h2>
+                <ul class="mt-1 sm:mt-2 space-y-1 sm:space-y-2">
+                    <li><a href="#" class="hover:text-[#FF6D00]">About Us</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">HOMI Affiliate Program</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Interior Design Services</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Articles</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Careers</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="font-semibold text-lg">Customer Support</h2>
+                <ul class="mt-1 sm:mt-2 space-y-1 sm:space-y-2">
+                    <li><a href="#" class="hover:text-[#FF6D00]">How to Shop</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Payment & Installments</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Assembly Service</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Become a HOMI Partner</a></li>
+                    <li><a href="#" class="hover:text-[#FF6D00]">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-300 mt-6 pt-4 text-center text-gray-600">
+            <p>&copy; 2025 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Login Modal
+        const openLogin = document.getElementById("openLogin");
+        const closeLogin = document.getElementById("closeLogin");
+        const loginPopup = document.getElementById("loginPopup");
+        const loginButton = document.getElementById("loginButton")
+
+        // Register Modal
+        const openRegister = document.getElementById("openRegister");
+        const closeRegister = document.getElementById("closeRegister");
+        const registerPopup = document.getElementById("registerPopup");
+        const registerButton = document.getElementById("registerButton")
+
+        // Back to Login
+        const backToLogin = document.getElementById("backToLogin");
+
+        // Open Login Modal
+        openLogin.addEventListener("click", () => {
+            loginPopup.classList.remove("hidden");
+        });
+
+        // Close Login Modal
+        closeLogin.addEventListener("click", () => {
+            loginPopup.classList.add("hidden");
+        });
+        loginButton.addEventListener("click", () => {
+            loginPopup.classList.add("hidden");
+        });
+
+        // Open Register Modal from Login
+        openRegister.addEventListener("click", (e) => {
+            e.preventDefault();
+            loginPopup.classList.add("hidden");
+            registerPopup.classList.remove("hidden");
+        });
+
+        // Close Register Modal
+        closeRegister.addEventListener("click", () => {
+            registerPopup.classList.add("hidden");
+        });
+        registerButton.addEventListener("click", () => {
+            registerPopup.classList.add("hidden");
+        });
+
+        // Back to Login from Register
+        backToLogin.addEventListener("click", (e) => {
+            e.preventDefault();
+            registerPopup.classList.add("hidden");
+            loginPopup.classList.remove("hidden");
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener("click", (e) => {
+            if (e.target === loginPopup) {
+                loginPopup.classList.add("hidden");
+            }
+            if (e.target === registerPopup) {
+                registerPopup.classList.add("hidden");
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slider = document.getElementById("discount-slider");
+            const prevBtn = document.getElementById("prev-btn");
+            const nextBtn = document.getElementById("next-btn");
+
+            let index = 0;
+            let totalSlides = document.querySelectorAll("#discount-slider > div").length;
+            let slidesPerView = window.innerWidth < 640 ? 1 : 2; // 1 di mobile, 2 di tablet & desktop
+            let slideWidth = slider.children[0].offsetWidth + 16; // 16px adalah gap
+
+            function updateSlider() {
+                slider.style.transform = `translateX(-${index * slideWidth}px)`;
+
+                prevBtn.classList.toggle("hidden", index === 0);
+                nextBtn.classList.toggle("hidden", index >= totalSlides - slidesPerView);
+            }
+
+            nextBtn.addEventListener("click", function () {
+                if (index < totalSlides - slidesPerView) {
+                    index++;
+                    updateSlider();
+                }
+            });
+
+            prevBtn.addEventListener("click", function () {
+                if (index > 0) {
+                    index--;
+                    updateSlider();
+                }
+            });
+
+            window.addEventListener("resize", function () {
+                slidesPerView = window.innerWidth < 640 ? 1 : 2;
+                slideWidth = slider.children[0].offsetWidth + 16;
+                updateSlider();
+            });
+
+            updateSlider();
+        });
+    </script>
+</body>
+
+</html>
